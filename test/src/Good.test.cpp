@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../inc/Demand.h"
-#include "../inc/Good.h"
+#include "../../inc/Demand.h"
+#include "../../inc/Good.h"
 
 using namespace std;
 
@@ -25,12 +25,11 @@ void construction() {
 void addDemand() {
     cout << "addDemand... ";
     Good good;
-    int beforeVal = good.getValue();
+    int beforeCount = good.getDemands().size();
+
     good.addDemand(Demand("test demand"));
 
-    cout << good.toString() << endl;
-
-    if (good.getValue() == (beforeVal + 1)) {
+    if (good.getDemands().size() == (beforeCount + 1)) {
         cout << "pass." << endl;
     }
     else {
